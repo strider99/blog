@@ -6,4 +6,4 @@
 // :hp-alt-title: My English Title
 = Creating a ElectronJs BrowserWindow
 
-image::imagetest.png
+image::imagetest.png[]
