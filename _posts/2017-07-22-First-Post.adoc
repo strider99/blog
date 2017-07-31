@@ -12,6 +12,6 @@ Hello World :)
 Hello World
 ```
 
-image::http://github.com/strider99/blog/images/imagetest.png
-image::imagetest.png
+image::http://github.com/strider99/blog/images/imagetest.png[]
+image::images/imagetest.png[]
 testing image
