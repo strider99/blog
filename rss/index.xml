@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Javascript Musings]]></title><description><![CDATA[Concepts in Javascript]]></description><link>https://strider99.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Mon, 31 Jul 2017 01:45:13 GMT</lastBuildDate><atom:link href="https://strider99.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First Post]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Javascript Musings]]></title><description><![CDATA[Concepts in Javascript]]></description><link>https://strider99.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Mon, 31 Jul 2017 01:49:53 GMT</lastBuildDate><atom:link href="https://strider99.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First Post]]></title><description><![CDATA[<div class="paragraph">
 <p>Hello World :)</p>
 </div>
 <div class="listingblock">
@@ -7,5 +7,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>image::http://github.com/strider99/blog/images/imagetest.png</p>
+<p>image::http://github.com/strider99/blog/images/imagetest.png
+image::imagetest.png[an image test]
+testing image</p>
 </div>]]></description><link>https://strider99.github.io/blog/2017/07/22/First-Post.html</link><guid isPermaLink="true">https://strider99.github.io/blog/2017/07/22/First-Post.html</guid><pubDate>Sat, 22 Jul 2017 00:00:00 GMT</pubDate></item></channel></rss>
