@@ -13,5 +13,5 @@ Hello World
 ```
 
 image::http://github.com/strider99/blog/images/imagetest.png[]
-image::images/imagetest.png[]
+image::imagetest.png[]
 testing image
