@@ -12,3 +12,4 @@ Hello World :)
 Hello World
 ```
 :hp-image: /images/imagetest.png
+image::http://github.com/strider99/blog/images/imagetest.png
