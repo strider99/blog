@@ -11,7 +11,7 @@ Hello World :)
 ```
 Hello World
 ```
-:hp-image: /images/imagetest.png
+
 image::http://github.com/strider99/blog/images/imagetest.png
-image::imagetest.png[an image test]
+image::imagetest.png
 testing image
