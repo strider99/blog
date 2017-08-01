@@ -1,0 +1,66 @@
+
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+= Installing ElectronJS on Windows
+
+_Prerequisite_ - NodeJs Installed. If you dont have Node JS installed, download and install it from https://nodejs.org/en/download/[here].
+
+After installing NodeJS, we start command prompt and create a folder where electron will be installed. For every project, we will do local install of Electron instead of global.
+
+We navigate to the folder where we want electron and first initialize the folder with a package.json file. To do that, we type in the command prompt `npm init` . We have to fill in a series of information like name, version, author etc. To initialize the package.json with generic information to save time, we can do `npm init -y` instead.
+
+Now, to install electron, we type in
+```
+npm install electron -D
+```
+The -D is to save electron as a dev dependency in our package.json file. Now we open the package.json file in our favorite text editor. We will also create one more folder inside where we will keep our code. Lets name it *src*.
+Inside the *src* folder, lets create a file called main.js which will be the entry point to our electronJS app.
+
+Now, in the package.json file, we change the value of "main" which is index.js to "src/main.js" as that's our entry point.
+
+And in the "scripts", we will remove test, and add "start" whose value will be "electron ." This just tells npm to starts electron when we type `npm start` in the command prompt.
+
+So, the package.json look something like this now,
+```
+{
+  "name": "electron-blog-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.6.11"
+  }
+}
+
+```
+
+Well, we have done everything we can to install and start electron. As a final confirmation, that we have done everything correctly, lets go to main.js which is inside the src folder and write a `console.log` statement.
+
+```
+console.log(" Electron Started");
+```
+
+Now in the command prompt, type
+```
+npm start
+```
+we will see the output _Electron Started_ in the command prompt.
+
+
+
+
+
+
+
+
+
+
+
