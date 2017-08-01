@@ -1,1 +1,68 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Javascript Musings]]></title><description><![CDATA[Concepts in Javascript]]></description><link>https://strider99.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 01 Aug 2017 04:37:49 GMT</lastBuildDate><atom:link href="https://strider99.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Javascript Musings]]></title><description><![CDATA[Concepts in Javascript]]></description><link>https://strider99.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 01 Aug 2017 04:39:33 GMT</lastBuildDate><atom:link href="https://strider99.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Installing ElectronJS on Windows]]></title><description><![CDATA[<div class="paragraph">
+<p><em>Prerequisite</em> - NodeJs Installed. If you dont have Node JS installed, download and install it from <a href="https://nodejs.org/en/download/">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>After installing NodeJS, we start command prompt and create a folder where electron will be installed. For every project, we will do local install of Electron instead of global.</p>
+</div>
+<div class="paragraph">
+<p>We navigate to the folder where we want electron and first initialize the folder with a package.json file. To do that, we type in the command prompt <code>npm init</code> . We have to fill in a series of information like name, version, author etc. To initialize the package.json with generic information to save time, we can do <code>npm init -y</code> instead.</p>
+</div>
+<div class="paragraph">
+<p>Now, to install electron, we type in</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>npm install electron -D</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The -D is to save electron as a dev dependency in our package.json file. Now we open the package.json file in our favorite text editor. We will also create one more folder inside where we will keep our code. Lets name it <strong>src</strong>.
+Inside the <strong>src</strong> folder, lets create a file called main.js which will be the entry point to our electronJS app.</p>
+</div>
+<div class="paragraph">
+<p>Now, in the package.json file, we change the value of "main" which is index.js to "src/main.js" as that&#8217;s our entry point.</p>
+</div>
+<div class="paragraph">
+<p>And in the "scripts", we will remove test, and add "start" whose value will be "electron ." This just tells npm to starts electron when we type <code>npm start</code> in the command prompt.</p>
+</div>
+<div class="paragraph">
+<p>So, the package.json look something like this now,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+  "name": "electron-blog-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.6.11"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Well, we have done everything we can to install and start electron. As a final confirmation, that we have done everything correctly, lets go to main.js which is inside the src folder and write a <code>console.log</code> statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>console.log(" Electron Started");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now in the command prompt, type</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>npm start</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>we will see the output <em>Electron Started</em> in the command prompt.</p>
+</div>]]></description><link>https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html</link><guid isPermaLink="true">https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html</guid><pubDate>Tue, 01 Aug 2017 00:00:00 GMT</pubDate></item></channel></rss>

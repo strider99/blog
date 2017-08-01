@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Installing ElectronJS on Windows</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://strider99.github.io/blog/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//strider99.github.io/blog/themes/casper/assets/css/screen.css?v=1501562373208" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Javascript Musings" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Installing ElectronJS on Windows" />
+    <meta property="og:description" content="Prerequisite - NodeJs Installed. If you dont have Node JS installed, download and install it from here. After installing NodeJS, we start command prompt and create a folder where electron will be installed. For every project, we will do local install of Electron instead of global. We navigate to the" />
+    <meta property="og:url" content="https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html" />
+    <meta property="article:published_time" content="2017-08-01T00:00:00.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Installing ElectronJS on Windows" />
+    <meta name="twitter:description" content="Prerequisite - NodeJs Installed. If you dont have Node JS installed, download and install it from here. After installing NodeJS, we start command prompt and create a folder where electron will be installed. For every project, we will do local install of Electron instead of global. We navigate to the" />
+    <meta name="twitter:url" content="https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Javascript Musings",
+    "author": {
+        "@type": "Person",
+        "name": "strider99",
+        "image": "https://avatars0.githubusercontent.com/u/7549876?v=4",
+        "url": "https://strider99.github.io/blog/author/strider99/"
+    },
+    "headline": "Installing ElectronJS on Windows",
+    "url": "https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html",
+    "datePublished": "2017-08-01T00:00:00.000Z",
+    "description": "Prerequisite - NodeJs Installed. If you dont have Node JS installed, download and install it from here. After installing NodeJS, we start command prompt and create a folder where electron will be installed. For every project, we will do local install of Electron instead of global. We navigate to the"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Javascript Musings" href="https://strider99.github.io/blog/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+</head>
+<body class="post-template nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Installing ElectronJS on Windows</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-08-01">01 August 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="paragraph">
+<p><em>Prerequisite</em> - NodeJs Installed. If you dont have Node JS installed, download and install it from <a href="https://nodejs.org/en/download/">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>After installing NodeJS, we start command prompt and create a folder where electron will be installed. For every project, we will do local install of Electron instead of global.</p>
+</div>
+<div class="paragraph">
+<p>We navigate to the folder where we want electron and first initialize the folder with a package.json file. To do that, we type in the command prompt <code>npm init</code> . We have to fill in a series of information like name, version, author etc. To initialize the package.json with generic information to save time, we can do <code>npm init -y</code> instead.</p>
+</div>
+<div class="paragraph">
+<p>Now, to install electron, we type in</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>npm install electron -D</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The -D is to save electron as a dev dependency in our package.json file. Now we open the package.json file in our favorite text editor. We will also create one more folder inside where we will keep our code. Lets name it <strong>src</strong>.
+Inside the <strong>src</strong> folder, lets create a file called main.js which will be the entry point to our electronJS app.</p>
+</div>
+<div class="paragraph">
+<p>Now, in the package.json file, we change the value of "main" which is index.js to "src/main.js" as that&#8217;s our entry point.</p>
+</div>
+<div class="paragraph">
+<p>And in the "scripts", we will remove test, and add "start" whose value will be "electron ." This just tells npm to starts electron when we type <code>npm start</code> in the command prompt.</p>
+</div>
+<div class="paragraph">
+<p>So, the package.json look something like this now,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>{
+  "name": "electron-blog-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.6.11"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Well, we have done everything we can to install and start electron. As a final confirmation, that we have done everything correctly, lets go to main.js which is inside the src folder and write a <code>console.log</code> statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>console.log(" Electron Started");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now in the command prompt, type</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>npm start</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>we will see the output <em>Electron Started</em> in the command prompt.</p>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://strider99.github.io/blog/author/strider99/" style="background-image: url(https://avatars0.githubusercontent.com/u/7549876?v&#x3D;4)"><span class="hidden">strider99's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://strider99.github.io/blog/author/strider99/">strider99</a></h4>
+
+                    <p>Read <a href="https://strider99.github.io/blog/author/strider99/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Installing%20ElectronJS%20on%20Windows&amp;url=https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://strider99.github.io/blog">Javascript Musings</a> &copy; 2017</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+       
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <script type="text/javascript" src="//strider99.github.io/blog/themes/casper/assets/js/jquery.fitvids.js?v=1501562373208"></script>
+    <script type="text/javascript" src="//strider99.github.io/blog/themes/casper/assets/js/index.js?v=1501562373208"></script>
+
+</body>
+</html>
