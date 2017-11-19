@@ -1,4 +1,91 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Javascript Musings]]></title><description><![CDATA[Concepts in Javascript]]></description><link>https://strider99.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 01 Aug 2017 04:39:33 GMT</lastBuildDate><atom:link href="https://strider99.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Installing ElectronJS on Windows]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Javascript Musings]]></title><description><![CDATA[Concepts in Javascript]]></description><link>https://strider99.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 19 Nov 2017 16:24:32 GMT</lastBuildDate><atom:link href="https://strider99.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Algorithm - Harmless Ransom Note]]></title><description><![CDATA[<div class="sect2">
+<h3 id="_problem">Problem :</h3>
+<div class="paragraph">
+<p><strong>You have been given two strings. You have to find out whether you can make up the first string with the words present in the second string.</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_solution">Solution :</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript"> function harmlessRansom(noteText, magazineText) {
+	var noteArr = noteText.split(' ');
+	var magazineArr = magazineText.split(' ');
+
+	var magazineObj = {};
+
+	magazineArr.forEach(word =&gt; {
+		if(!magazineObj[word]) magazineObj[word] = 0;
+		magazineObj[word]++;
+	});
+  var noteIsPossible = true;
+	noteArr.forEach(word =&gt; {
+		if(magazineObj[word]){
+			magazineObj[word]--;
+			if(magazineObj[word] &lt; 0)
+				noteIsPossible=false;
+		}
+		else
+			noteIsPossible = false;
+	});
+
+return noteIsPossible;
+}
+
+var result = harmlessRansom('this is a secret note for you from a secret admirer', 'puerto rico is a place of great wonder and excitement it has many secret waterfall locatoins that i am an admirer of you must hike quite a distance to find the secret places as they are far from populated areas but it is worth the effort a tip i have for you is to go early in the morning when it is not so hot out also note that you must wear hiking boots this is one of the best places i have ever visited');
+console.log(result);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_explanation">Explanation</h3>
+<div class="paragraph">
+<p>We will go through the solution line by line. We have to form the string present in the variable <code>noteText</code> from the words present in the string in the variable <code>magazineText</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var noteArr = noteText.split(' ');
+var magazineArr = magazineText.split(' ');</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above splits both the strings into array of individual words.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var magazineObj = {};
+
+magazineArr.forEach(word =&gt; {
+	if(!magazineObj[word]) magazineObj[word] = 0;
+	magazineObj[word]++;
+});</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we declared an empty object called <code>magazineObj</code> which was used to store the number of times every word occured in magazineArr. We do this because it will help us later to count down the availability of a word if it is needed multiple times.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var noteIsPossible = true;
+noteArr.forEach(word =&gt; {
+	if(magazineObj[word]){
+		magazineObj[word]--;
+		if(magazineObj[word] &lt; 0)
+			noteIsPossible=false;
+	}
+	else
+		noteIsPossible = false;
+});
+return noteIsPossible;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The variable <code>noteIsPossible</code> was used as a flag to check whether our forEach loop is run successfully to the end or not.
+The forEach loop above checks whether the word present in noteArr is also present in magazineObj, and if its present then it reduces the count of that particular word by 1.
+If the count at any point becomes less than 0, it returns a false. Otherwise it returns true.
+If the word is not found at all in the magazineObj the false is returned.</p>
+</div>
+</div>]]></description><link>https://strider99.github.io/blog/2017/11/19/Algorithm-Harmless-Ransom-Note.html</link><guid isPermaLink="true">https://strider99.github.io/blog/2017/11/19/Algorithm-Harmless-Ransom-Note.html</guid><dc:creator><![CDATA[Omprakash Panigrahi]]></dc:creator><pubDate>Sun, 19 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Installing ElectronJS on Windows]]></title><description><![CDATA[<div class="paragraph">
 <p><em>Prerequisite</em> - NodeJs Installed. If you dont have Node JS installed, download and install it from <a href="https://nodejs.org/en/download/">here</a>.</p>
 </div>
 <div class="paragraph">
@@ -65,4 +152,4 @@ Inside the <strong>src</strong> folder, lets create a file called main.js which 
 </div>
 <div class="paragraph">
 <p>we will see the output <em>Electron Started</em> in the command prompt.</p>
-</div>]]></description><link>https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html</link><guid isPermaLink="true">https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html</guid><pubDate>Tue, 01 Aug 2017 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html</link><guid isPermaLink="true">https://strider99.github.io/blog/2017/08/01/Installing-ElectronJS-on-Windows.html</guid><dc:creator><![CDATA[Omprakash Panigrahi]]></dc:creator><pubDate>Tue, 01 Aug 2017 00:00:00 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Algorithm - Harmless Ransom Note</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://strider99.github.io/blog/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//strider99.github.io/blog/themes/casper/assets/css/screen.css?v=1511108672860" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://strider99.github.io/blog/2017/11/19/Algorithm-Harmless-Ransom-Note.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Javascript Musings" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Algorithm - Harmless Ransom Note" />
+    <meta property="og:description" content="Problem : You have been given two strings. You have to find out whether you can make up the first string with the words present in the second string. Solution :  function harmlessRansom(noteText, magazineText) { 	var noteArr &#x3D; noteText.split(&#x27; &#x27;); 	var magazineArr &#x3D; magazineText.split(&#x27; &#x27;); 	var magazineObj &#x3D; {}; 	magazineArr.forEach(word" />
+    <meta property="og:url" content="https://strider99.github.io/blog/2017/11/19/Algorithm-Harmless-Ransom-Note.html" />
+    <meta property="article:published_time" content="2017-11-19T00:00:00.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Algorithm - Harmless Ransom Note" />
+    <meta name="twitter:description" content="Problem : You have been given two strings. You have to find out whether you can make up the first string with the words present in the second string. Solution :  function harmlessRansom(noteText, magazineText) { 	var noteArr &#x3D; noteText.split(&#x27; &#x27;); 	var magazineArr &#x3D; magazineText.split(&#x27; &#x27;); 	var magazineObj &#x3D; {}; 	magazineArr.forEach(word" />
+    <meta name="twitter:url" content="https://strider99.github.io/blog/2017/11/19/Algorithm-Harmless-Ransom-Note.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Javascript Musings",
+    "author": {
+        "@type": "Person",
+        "name": "Omprakash Panigrahi",
+        "image": "https://avatars0.githubusercontent.com/u/7549876?v=4",
+        "url": "https://strider99.github.io/blog/author/strider99/",
+        "description": "Front End Web Developer. Interested in all things javascript."
+    },
+    "headline": "Algorithm - Harmless Ransom Note",
+    "url": "https://strider99.github.io/blog/2017/11/19/Algorithm-Harmless-Ransom-Note.html",
+    "datePublished": "2017-11-19T00:00:00.000Z",
+    "description": "Problem : You have been given two strings. You have to find out whether you can make up the first string with the words present in the second string. Solution :  function harmlessRansom(noteText, magazineText) { \tvar noteArr &#x3D; noteText.split(&#x27; &#x27;); \tvar magazineArr &#x3D; magazineText.split(&#x27; &#x27;); \tvar magazineObj &#x3D; {}; \tmagazineArr.forEach(word"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Javascript Musings" href="https://strider99.github.io/blog/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+</head>
+<body class="post-template nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Algorithm - Harmless Ransom Note</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-11-19">19 November 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="sect2">
+<h3 id="_problem">Problem :</h3>
+<div class="paragraph">
+<p><strong>You have been given two strings. You have to find out whether you can make up the first string with the words present in the second string.</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_solution">Solution :</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript"> function harmlessRansom(noteText, magazineText) {
+	var noteArr = noteText.split(' ');
+	var magazineArr = magazineText.split(' ');
+
+	var magazineObj = {};
+
+	magazineArr.forEach(word =&gt; {
+		if(!magazineObj[word]) magazineObj[word] = 0;
+		magazineObj[word]++;
+	});
+  var noteIsPossible = true;
+	noteArr.forEach(word =&gt; {
+		if(magazineObj[word]){
+			magazineObj[word]--;
+			if(magazineObj[word] &lt; 0)
+				noteIsPossible=false;
+		}
+		else
+			noteIsPossible = false;
+	});
+
+return noteIsPossible;
+}
+
+var result = harmlessRansom('this is a secret note for you from a secret admirer', 'puerto rico is a place of great wonder and excitement it has many secret waterfall locatoins that i am an admirer of you must hike quite a distance to find the secret places as they are far from populated areas but it is worth the effort a tip i have for you is to go early in the morning when it is not so hot out also note that you must wear hiking boots this is one of the best places i have ever visited');
+console.log(result);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_explanation">Explanation</h3>
+<div class="paragraph">
+<p>We will go through the solution line by line. We have to form the string present in the variable <code>noteText</code> from the words present in the string in the variable <code>magazineText</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var noteArr = noteText.split(' ');
+var magazineArr = magazineText.split(' ');</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above splits both the strings into array of individual words.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var magazineObj = {};
+
+magazineArr.forEach(word =&gt; {
+	if(!magazineObj[word]) magazineObj[word] = 0;
+	magazineObj[word]++;
+});</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we declared an empty object called <code>magazineObj</code> which was used to store the number of times every word occured in magazineArr. We do this because it will help us later to count down the availability of a word if it is needed multiple times.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var noteIsPossible = true;
+noteArr.forEach(word =&gt; {
+	if(magazineObj[word]){
+		magazineObj[word]--;
+		if(magazineObj[word] &lt; 0)
+			noteIsPossible=false;
+	}
+	else
+		noteIsPossible = false;
+});
+return noteIsPossible;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The variable <code>noteIsPossible</code> was used as a flag to check whether our forEach loop is run successfully to the end or not.
+The forEach loop above checks whether the word present in noteArr is also present in magazineObj, and if its present then it reduces the count of that particular word by 1.
+If the count at any point becomes less than 0, it returns a false. Otherwise it returns true.
+If the word is not found at all in the magazineObj the false is returned.</p>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://strider99.github.io/blog/author/strider99/" style="background-image: url(https://avatars0.githubusercontent.com/u/7549876?v&#x3D;4)"><span class="hidden">Omprakash Panigrahi's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://strider99.github.io/blog/author/strider99/">Omprakash Panigrahi</a></h4>
+
+                    <p>Front End Web Developer. Interested in all things javascript.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Bangalore</span>
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Algorithm%20-%20Harmless%20Ransom%20Note&amp;url=https://strider99.github.io/blog/2017/11/19/Algorithm-Harmless-Ransom-Note.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://strider99.github.io/blog/2017/11/19/Algorithm-Harmless-Ransom-Note.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://strider99.github.io/blog/2017/11/19/Algorithm-Harmless-Ransom-Note.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://strider99.github.io/blog">Javascript Musings</a> &copy; 2017</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+       
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <script type="text/javascript" src="//strider99.github.io/blog/themes/casper/assets/js/jquery.fitvids.js?v=1511108672860"></script>
+    <script type="text/javascript" src="//strider99.github.io/blog/themes/casper/assets/js/index.js?v=1511108672860"></script>
+
+</body>
+</html>
