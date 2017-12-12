@@ -9,7 +9,7 @@
 :published_at: 2017-12-12
 
 === Problem:
-*Given a position, find the fibonacci number at that position.*
+*Given a position, find the fibonacci number at that position.* We will use recursion to find the solution even though it is not as efficient as memoization.
 
 === Solution
 
