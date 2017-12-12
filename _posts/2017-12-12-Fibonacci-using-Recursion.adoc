@@ -52,7 +52,7 @@ and so on until position becomes less than 3.
 
 The following flowchart will make it clear how recursion works.
 
-image::https://lh5.googleusercontent.com/4TgM2rcsVL7PjasxWWY1I_Bfch2G5OifIktVEg_kipJ8h2xfzP_29uehQeCwbu3dzLDAijR-uIJaOVXA0cs7=w1366-h637[fibonacci.jpeg]
+image::https://i.imgur.com/smCpy5j.jpg[fibonacci.jpeg]
 
 
 
