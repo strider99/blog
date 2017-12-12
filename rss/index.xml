@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Javascript Musings]]></title><description><![CDATA[Concepts in Javascript]]></description><link>https://strider99.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 12 Dec 2017 14:00:52 GMT</lastBuildDate><atom:link href="https://strider99.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Fibonacci using Recursion]]></title><description><![CDATA[<div class="sect2">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Javascript Musings]]></title><description><![CDATA[Concepts in Javascript]]></description><link>https://strider99.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 12 Dec 2017 14:03:12 GMT</lastBuildDate><atom:link href="https://strider99.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Fibonacci using Recursion]]></title><description><![CDATA[<div class="sect2">
 <h3 id="_problem">Problem:</h3>
 <div class="paragraph">
 <p><strong>Given a position, find the fibonacci number at that position.</strong> We will use recursion to find the solution even though it is not as efficient as memoization.</p>
@@ -69,7 +69,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="https://lh5.googleusercontent.com/4TgM2rcsVL7PjasxWWY1I_Bfch2G5OifIktVEg_kipJ8h2xfzP_29uehQeCwbu3dzLDAijR-uIJaOVXA0cs7=w1366-h637" alt="fibonacci.jpeg">
+<img src="https://i.imgur.com/smCpy5j.jpg" alt="fibonacci.jpeg">
 </div>
 </div>
 </div>]]></description><link>https://strider99.github.io/blog/2017/12/12/Fibonacci-using-Recursion.html</link><guid isPermaLink="true">https://strider99.github.io/blog/2017/12/12/Fibonacci-using-Recursion.html</guid><category><![CDATA[javascript]]></category><category><![CDATA[recursion]]></category><category><![CDATA[algorithms]]></category><dc:creator><![CDATA[Omprakash Panigrahi]]></dc:creator><pubDate>Tue, 12 Dec 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Algorithm - Harmless Ransom Note]]></title><description><![CDATA[<div class="sect2">
