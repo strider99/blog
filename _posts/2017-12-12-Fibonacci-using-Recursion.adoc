@@ -1,0 +1,59 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+= Fibonacci using Recursion
+:hp-tags: javascript, recursion, algorithms
+:published_at: 2017-12-12
+
+=== Problem:
+*Given a position, find the fibonacci number at that position.*
+
+=== Solution
+
+*solution 1* 
+```javascript
+const fibonacci = position => {
+	if(position < 3){
+		return 1;
+
+	}
+	else {
+		return fibonacci(position - 1) + fibonacci(position - 2);
+	}
+}
+```
+*solution 2 - a terse solution using ternary operator*
+```
+const fibonacci = position =>  position < 3 ? 1 : fibonacci(position - 1) + fibonacci(position - 2);
+```
+
+=== Explanation
+
+*Fibonacci Sequence* - 1 1 2 3 5 8 13 21 ...
+
+A fibonacci sequence starts with 1 and 1 and then continues on with the sum of previous two numbers.
+
+For example if the position passed to the function is 6, the value 8 will be returned. If 8 is passed to the function, then 21 will be returned.
+
+We have used recursion to find the result. We keep calling the fibonacci function using recursion until the position is less than 3. When the position < 3 it will return 1.
+
+Lets say the position passed to the function is 6. Since 6 is not less than 3, the else clause will be executed which will be 
+```
+return fibonacci(5) + fibonacci(4);
+```
+Now fibonacci(5) will be executed as 
+```
+return fibonacci(4) + fibonacci(3);
+```
+and so on until position becomes less than 3.
+
+The following flowchart will make it clear how recursion works.
+
+image::https://lh6.googleusercontent.com/VET9IiP7_ZkIVrkXaUAWi4SnyO8ehZWJb1blQKt_iCkaGb3M0D1aQZLTd_FuNvKqbvDYp7m0N8VrDIHqDJTU=w1366-h588[fibonacci.jpeg]
+
+
+
+
