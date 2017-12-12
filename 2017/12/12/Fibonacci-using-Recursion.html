@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Fibonacci using Recursion</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://strider99.github.io/blog/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//strider99.github.io/blog/themes/casper/assets/css/screen.css?v=1513086692946" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://strider99.github.io/blog/2017/12/12/Fibonacci-using-Recursion.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Javascript Musings" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Fibonacci using Recursion" />
+    <meta property="og:description" content="Problem: Given a position, find the fibonacci number at that position. Solution solution 1 const fibonacci &#x3D; position &#x3D;&amp;gt; { 	if(position &amp;lt; 3){ 		return 1; 	} 	else { 		return fibonacci(position - 1) + fibonacci(position - 2); 	} } solution 2 - a terse solution using ternary operator const fibonacci &#x3D; position &#x3D;&amp;gt;  position &amp;lt; 3" />
+    <meta property="og:url" content="https://strider99.github.io/blog/2017/12/12/Fibonacci-using-Recursion.html" />
+    <meta property="article:published_time" content="2017-12-12T00:00:00.000Z" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="recursion" />
+    <meta property="article:tag" content="algorithms" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Fibonacci using Recursion" />
+    <meta name="twitter:description" content="Problem: Given a position, find the fibonacci number at that position. Solution solution 1 const fibonacci &#x3D; position &#x3D;&amp;gt; { 	if(position &amp;lt; 3){ 		return 1; 	} 	else { 		return fibonacci(position - 1) + fibonacci(position - 2); 	} } solution 2 - a terse solution using ternary operator const fibonacci &#x3D; position &#x3D;&amp;gt;  position &amp;lt; 3" />
+    <meta name="twitter:url" content="https://strider99.github.io/blog/2017/12/12/Fibonacci-using-Recursion.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Javascript Musings",
+    "author": {
+        "@type": "Person",
+        "name": "Omprakash Panigrahi",
+        "image": "https://avatars0.githubusercontent.com/u/7549876?v=4",
+        "url": "https://strider99.github.io/blog/author/strider99/",
+        "description": "Front End Web Developer. Interested in all things javascript."
+    },
+    "headline": "Fibonacci using Recursion",
+    "url": "https://strider99.github.io/blog/2017/12/12/Fibonacci-using-Recursion.html",
+    "datePublished": "2017-12-12T00:00:00.000Z",
+    "keywords": "javascript, recursion, algorithms",
+    "description": "Problem: Given a position, find the fibonacci number at that position. Solution solution 1 const fibonacci &#x3D; position &#x3D;&amp;gt; { \tif(position &amp;lt; 3){ \t\treturn 1; \t} \telse { \t\treturn fibonacci(position - 1) + fibonacci(position - 2); \t} } solution 2 - a terse solution using ternary operator const fibonacci &#x3D; position &#x3D;&amp;gt;  position &amp;lt; 3"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Javascript Musings" href="https://strider99.github.io/blog/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+</head>
+<body class="post-template tag-javascript tag-recursion tag-algorithms nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-javascript tag-recursion tag-algorithms">
+
+        <header class="post-header">
+            <h1 class="post-title">Fibonacci using Recursion</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-12-12">12 December 2017</time>  on <a href="https://strider99.github.io/blog/tag/javascript/">javascript</a>, <a href="https://strider99.github.io/blog/tag/recursion/">recursion</a>, <a href="https://strider99.github.io/blog/tag/algorithms/">algorithms</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="sect2">
+<h3 id="_problem">Problem:</h3>
+<div class="paragraph">
+<p><strong>Given a position, find the fibonacci number at that position.</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_solution">Solution</h3>
+<div class="paragraph">
+<p><strong>solution 1</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">const fibonacci = position =&gt; {
+	if(position &lt; 3){
+		return 1;
+
+	}
+	else {
+		return fibonacci(position - 1) + fibonacci(position - 2);
+	}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>solution 2 - a terse solution using ternary operator</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>const fibonacci = position =&gt;  position &lt; 3 ? 1 : fibonacci(position - 1) + fibonacci(position - 2);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_explanation">Explanation</h3>
+<div class="paragraph">
+<p><strong>Fibonacci Sequence</strong> - 1 1 2 3 5 8 13 21 &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>A fibonacci sequence starts with 1 and 1 and then continues on with the sum of previous two numbers.</p>
+</div>
+<div class="paragraph">
+<p>For example if the position passed to the function is 6, the value 8 will be returned. If 8 is passed to the function, then 21 will be returned.</p>
+</div>
+<div class="paragraph">
+<p>We have used recursion to find the result. We keep calling the fibonacci function using recursion until the position is less than 3. When the position &lt; 3 it will return 1.</p>
+</div>
+<div class="paragraph">
+<p>Lets say the position passed to the function is 6. Since 6 is not less than 3, the else clause will be executed which will be</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>return fibonacci(5) + fibonacci(4);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now fibonacci(5) will be executed as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>return fibonacci(4) + fibonacci(3);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and so on until position becomes less than 3.</p>
+</div>
+<div class="paragraph">
+<p>The following flowchart will make it clear how recursion works.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://lh6.googleusercontent.com/VET9IiP7_ZkIVrkXaUAWi4SnyO8ehZWJb1blQKt_iCkaGb3M0D1aQZLTd_FuNvKqbvDYp7m0N8VrDIHqDJTU=w1366-h588" alt="fibonacci.jpeg">
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://strider99.github.io/blog/author/strider99/" style="background-image: url(https://avatars0.githubusercontent.com/u/7549876?v&#x3D;4)"><span class="hidden">Omprakash Panigrahi's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://strider99.github.io/blog/author/strider99/">Omprakash Panigrahi</a></h4>
+
+                    <p>Front End Web Developer. Interested in all things javascript.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Bangalore</span>
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Fibonacci%20using%20Recursion&amp;url=https://strider99.github.io/blog/2017/12/12/Fibonacci-using-Recursion.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://strider99.github.io/blog/2017/12/12/Fibonacci-using-Recursion.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://strider99.github.io/blog/2017/12/12/Fibonacci-using-Recursion.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://strider99.github.io/blog">Javascript Musings</a> &copy; 2017</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+       
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <script type="text/javascript" src="//strider99.github.io/blog/themes/casper/assets/js/jquery.fitvids.js?v=1513086692946"></script>
+    <script type="text/javascript" src="//strider99.github.io/blog/themes/casper/assets/js/index.js?v=1513086692946"></script>
+
+</body>
+</html>
